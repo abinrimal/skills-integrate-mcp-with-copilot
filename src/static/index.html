@@ -10,7 +10,34 @@
     <header>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
+      <div id="auth-container" class="auth-container">
+        <button id="auth-btn" class="auth-btn">👤 Login</button>
+        <div id="auth-info" class="hidden">
+          <span id="username-display"></span>
+          <button id="logout-btn" class="logout-btn">Logout</button>
+        </div>
+      </div>
     </header>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Teacher Login</h3>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" required />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+        <div id="login-error" class="error-message hidden"></div>
+      </div>
+    </div>
 
     <main>
       <section id="activities-container">
@@ -22,7 +49,7 @@
       </section>
 
       <section id="signup-container">
-        <h3>Sign Up for an Activity</h3>
+        <h3>Register Student for Activity</h3>
         <form id="signup-form">
           <div class="form-group">
             <label for="email">Student Email:</label>
@@ -35,9 +62,10 @@
               <!-- Activity options will be loaded here -->
             </select>
           </div>
-          <button type="submit">Sign Up</button>
+          <button type="submit" id="signup-btn">Register Student</button>
         </form>
         <div id="message" class="hidden"></div>
+        <p id="auth-required" class="warning hidden">⚠️ You must be logged in as a teacher to register/unregister students.</p>
       </section>
     </main>
 
